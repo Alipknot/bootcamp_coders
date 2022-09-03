@@ -1,14 +1,39 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Estudiantes</h1>
-
-<div id="estudiantes">
-  <% @estudiantes.each do |estudiante| %>
-    <%= render estudiante %>
-    <p>
-      <%= link_to "Show this estudiante", estudiante %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New estudiante", new_estudiante_path %>
+<%= form_with method: :get, class: "row align-items-end mb-4"  do |form| %>
+  <div class="col-xs-4 col-md-4">
+    <%= form.label :region, "Region:" %>
+    <%= form.collection_select :region, Region.all, :id, :nombre, { prompt: "Seleccione region"}, { class:"form-control" } %>
+  </div>
+  <div class="col-xs-4 col-md-4">
+    <%= form.label :codigo, "Codigo:" %>
+    <%= form.collection_select :codigo, Curso.all, :id, :codigo_curso, { prompt: "Seleccione curso" }, { class:"form-control" } %>
+  </div>
+  <div class="col-xs-4 col-md-4">
+    <%= form.submit "Buscar", class: "btn btn-primary" %>
+  </div> 
+<% end %>
+<table class="table table_responsive">
+  <thead>
+    <tr>
+      <th scope="col">Rut</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido Paterno</th>
+      <th scope="col">Apellido Materno</th>
+      <th scope="col">Codigo Curso</th>
+      <th scope="col">Descripcion Curso</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @estudiantes.each do |estudiante| %>
+      <tr>
+        <td><%= estudiante.rut %></td>   
+        <td><%= estudiante.nombre %></td>   
+        <td><%= estudiante.apellido_pat %></td>   
+        <td><%= estudiante.apellido_mat %></td>   
+        <td><%= estudiante.curso[:codigo_curso] %></td>
+        <td><%= estudiante.curso.plan_formativo[:descripcion] %></td>
+      </tr>  
+    <% end %>
+  </tbody>
+</table>
