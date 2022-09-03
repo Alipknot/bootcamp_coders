@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este proyecto es generado por nicolas alejandro Cancino Cancino para el examen de bootcamp ruby on rails.
 
-Things you may want to cover:
+Cosas a saber:
 
-* Ruby version
+El ejercicio 1 de consultas a la database facilitada esta en el archivo "parte 1 consultas a la databasew.sql"
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Para el ejercicio 2 y 3:
+descargar la aplicacion con git clone
+cd bootcamp_coders
+ejecutar bundle install
+ejecutar rake db:create y rake db:migrate
+cargar el sql de "archivo script insert db proyecto nicolas.sql" a la base de datos creada por rake db, por defecto bootcamp_coders_development
+por ultimo correr el servidor de rails con rails s
