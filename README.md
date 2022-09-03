@@ -13,3 +13,6 @@ ejecutar bundle install
 ejecutar rake db:create y rake db:migrate
 cargar el sql de "archivo script insert db proyecto nicolas.sql" a la base de datos creada por rake db, por defecto bootcamp_coders_development
 por ultimo correr el servidor de rails con rails s
+
+la ruta de acceso para el flujo del ejercicio 2 y 3 es /estudiantes
+ejemplo: http://127.0.0.1:3000/estudiantes
