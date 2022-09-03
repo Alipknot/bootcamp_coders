@@ -4,7 +4,7 @@ Este proyecto es generado por nicolas alejandro Cancino Cancino para el examen d
 
 Cosas a saber:
 
-El ejercicio 1 de consultas a la database facilitada esta en el archivo "parte 1 consultas a la databasew.sql"
+El ejercicio 1 de consultas a la database facilitada "scriptSQLBOOTCAMPMySQL.sql", esta en el archivo "parte 1 consultas a la databasew.sql"
 
 Para el ejercicio 2 y 3:
 descargar la aplicacion con git clone
