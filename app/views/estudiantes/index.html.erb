@@ -22,6 +22,7 @@
       <th scope="col">Apellido Materno</th>
       <th scope="col">Codigo Curso</th>
       <th scope="col">Descripcion Curso</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -33,6 +34,7 @@
         <td><%= estudiante.apellido_mat %></td>   
         <td><%= estudiante.curso[:codigo_curso] %></td>
         <td><%= estudiante.curso.plan_formativo[:descripcion] %></td>
+         <td><%= link_to "ver", estudiante_path(estudiante), class:  "btn btn-primary" %> </td>
       </tr>  
     <% end %>
   </tbody>

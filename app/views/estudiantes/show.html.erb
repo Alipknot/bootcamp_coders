@@ -1,10 +1,22 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @estudiante %>
-
-<div>
-  <%= link_to "Edit this estudiante", edit_estudiante_path(@estudiante) %> |
-  <%= link_to "Back to estudiantes", estudiantes_path %>
-
-  <%= button_to "Destroy this estudiante", @estudiante, method: :delete %>
-</div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= @estudiante.nombre %> <%= @estudiante.apellido_pat%> <%= @estudiante.apellido_pat %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">Curso: <%= @estudiante.curso.plan_formativo[:descripcion] %></h6>
+      <dl>
+        <dt>Rut:</dt>
+        <dd><%= @estudiante.rut %> </dd>
+        <dt>Comuna:</dt>
+        <dd><%= @estudiante.comuna[:nombre] %> </dd>
+        <dt>Direccion:</dt>
+        <dd><%= @estudiante.direccion %> </dd>
+        <dt>Codigo Curso:</dt>
+        <dd><%= @estudiante.curso[:codigo_curso] %> </dd>
+        <dt>Fecha Inicio Curso:</dt>
+        <dd><%= @estudiante.curso[:fecha_inicio] %> </dd>
+        <dt>Fecha Termino Curso:</dt>
+        <dd><%= @estudiante.curso[:fecha_termino] %> </dd>                
+      </dl>
+      <%= link_to "Volver a listado", estudiantes_path, class:"btn btn-primary" %>
+   </div>
+  </div>

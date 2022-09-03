@@ -1,5 +1,5 @@
 class EstudiantesController < ApplicationController
- 
+  before_action :set_estudiante, only: %i[ show ]
 
   # GET /estudiantes or /estudiantes.json
   def index
@@ -13,7 +13,10 @@ class EstudiantesController < ApplicationController
   def show
   end
 
-
+  private 
+    def set_estudiante
+      @estudiante = Estudiante.find(params[:id])
+    end  
     # Only allow a list of trusted parameters through.
     def estudiante_params
       params.require(:estudiante).permit(:rut, :nombre, :apellido_mat, :apellido_pat, :direccion, :comuna_id, :curso_id, :region, :codigo)
